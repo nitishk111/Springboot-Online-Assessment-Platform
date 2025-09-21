@@ -1,4 +1,4 @@
-package com.cg.login.controllers;
+package com.nitish.login.controllers;
 
 
 public class ErrorInfo {

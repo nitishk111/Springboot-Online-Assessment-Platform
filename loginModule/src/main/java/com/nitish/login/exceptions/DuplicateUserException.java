@@ -1,4 +1,4 @@
-package com.cg.login.exceptions;
+package com.nitish.login.exceptions;
 
 @SuppressWarnings("serial")
 public class DuplicateUserException extends RuntimeException{

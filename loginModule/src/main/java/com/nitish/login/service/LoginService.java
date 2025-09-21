@@ -1,18 +1,19 @@
-package com.cg.login.service;
+package com.nitish.login.service;
 
 
 import java.util.List;
 import java.util.Optional;
+
+import com.nitish.login.entity.Login;
+import com.nitish.login.exceptions.PasswordNotFoundException;
+import com.nitish.login.exceptions.RecordNotFoundException;
+import com.nitish.login.exceptions.UserNameNotFoundException;
+import com.nitish.login.repository.LoginRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.cg.login.entity.Login;
-import com.cg.login.exceptions.PasswordNotFoundException;
-import com.cg.login.exceptions.RecordNotFoundException;
-import com.cg.login.exceptions.UserNameNotFoundException;
-import com.cg.login.repository.LoginRepository;
 
 @Service
 public class LoginService {
@@ -20,7 +21,7 @@ public class LoginService {
 	Logger logger=LoggerFactory.getLogger(LoginService.class); 
 	
 	@Autowired
-	LoginRepository loginRepository;
+    LoginRepository loginRepository;
 	
 	//This is to add users in database
 	

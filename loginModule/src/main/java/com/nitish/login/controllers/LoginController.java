@@ -1,4 +1,6 @@
-package com.cg.login.controllers;
+package com.nitish.login.controllers;
+import com.nitish.login.entity.Login;
+import com.nitish.login.service.LoginService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.List;
@@ -13,8 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
-import com.cg.login.entity.Login;
-import com.cg.login.service.LoginService;
 import io.swagger.v3.oas.annotations.Operation;
 @RestController
 public class LoginController {
@@ -22,13 +22,13 @@ public class LoginController {
 	Logger logger=LoggerFactory.getLogger(LoginController.class);
 	
 	@Autowired
-	LoginService loginService;
+    LoginService loginService;
 	
 	//For Registration
 	
 	@PostMapping("/register")
 	@Operation(summary = "For Registration")
-	public ResponseEntity<ResponseInfo> addUsers(@Valid @RequestBody Login register,HttpServletRequest request){
+	public ResponseEntity<ResponseInfo> addUsers(@Valid @RequestBody Login register, HttpServletRequest request){
 		String message=loginService.addUsers(register);	
 		logger.info("Inside the method [addUsers] of controller:"+message);
 		ResponseInfo rinfo=new ResponseInfo(HttpStatus.CREATED.value(),HttpStatus.CREATED.name(),message,request.getRequestURI());

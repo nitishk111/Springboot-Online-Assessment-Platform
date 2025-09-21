@@ -1,4 +1,4 @@
-package com.cg.login.entity;
+package com.nitish.login.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
